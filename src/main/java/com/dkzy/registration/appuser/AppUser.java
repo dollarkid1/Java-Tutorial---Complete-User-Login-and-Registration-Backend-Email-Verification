@@ -30,16 +30,24 @@ public class AppUser implements UserDetails {
             strategy = GenerationType.SEQUENCE,
             generator = "client_sequence"
     )
-
      private Long id;
+
      private String firstName;
+
      private String lastName;
+
      private String email;
+
      private String password;
+
      @Enumerated(EnumType.STRING)
      private AppUserRole appUserRole;
-     private Boolean locked;
-     private Boolean enabled;
+
+     private Boolean locked = false;
+
+     private Boolean enabled = false;
+
+
 
     public AppUser(String firstName,
                    String lastName,
